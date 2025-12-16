@@ -9,6 +9,11 @@ export default function Apnavbar() {
   const navigate = useNavigate();
   const location = useLocation(); // qaysi sahifada turganini bilish
 
+  const MobileMenu = () => {
+    navigate("/");
+    setOpen(false);
+  }
+
   const linkClass = (path) =>
     `cursor-pointer text-[16px] ${
       location.pathname === path ? "font-bold" : "font-[400]"
@@ -17,12 +22,12 @@ export default function Apnavbar() {
   return (
     <header className="w-full sticky z-50 top-0 left-0 bg-[#E4EBFE] shadow-sm">
       <div className="flex items-center justify-between h-[80px] px-5">
-        <img src={Logo} alt="logo" className="w-[130px]" />
+        <img onClick={MobileMenu} src={Logo} alt="logo" className="w-[130px]" />
 
         {/* DESKTOP MENU */}
         <ul className="hidden md:flex gap-8 items-center">
           <li onClick={() => navigate("/")} className={linkClass("/")}>Dashboard</li>
-          <li onClick={() => navigate("/yetkazibberish")} className={linkClass("/yetkazibberish")}>Yetkazib berish</li>
+          {/* <li onClick={() => navigate("/yetkazibberish")} className={linkClass("/yetkazibberish")}>Yetkazib berish</li> */}
           <li onClick={() => navigate("/tovarlar")} className={linkClass("/tovarlar")}>Tovarlar</li>
           <li onClick={() => navigate("/buyurtmatarixi")} className={linkClass("/buyurtmatarixi")}>Buyurtma tarixi</li>
           <li onClick={() => navigate("/hisobot")} className={linkClass("/hisobot")}>Hisobot</li>

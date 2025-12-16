@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { MdOutlineModeEditOutline, MdDeleteOutline } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 function Aperator() {
+  const navigate = useNavigate();
+  const YetkazibBerish = () => {
+    navigate('/yetkazibberish');
+  }
   const [orders, setOrders] = useState([
     {
       id: 1234,
@@ -65,6 +70,8 @@ function Aperator() {
     }
   ]);
 
+
+
   const handleDelete = (id) => {
     setOrders(orders.filter(order => order.id !== id));
   };
@@ -79,16 +86,16 @@ function Aperator() {
       <table className="w-full min-w-[900px]">
         <thead className="bg-gray-50 border-b border-gray-200">
           <tr>
-            <th className="px-6 py-6 text-left text-[10px] font-medium cursor-pointer text-gray-700">Buyurtma ID si</th>
-            <th className="px-6 py-6 text-left text-[10px] font-medium cursor-pointer text-gray-700">Mahsulot nomi</th>
-            <th className="px-6 py-6 text-left text-[10px] font-medium cursor-pointer text-gray-700">Tadbirkorlar</th>
-            <th className="px-6 py-6 text-left text-[10px] font-medium cursor-pointer text-gray-700">Soni</th>
-            <th className="px-6 py-6 text-left text-[10px] font-medium cursor-pointer text-gray-700">Mijoz</th>
-            <th className="px-6 py-6 text-left text-[10px] font-medium cursor-pointer text-gray-700">Umumiy tarixi</th>
-            <th className="px-6 py-6 text-left text-[10px] font-medium cursor-pointer text-gray-700">Narxi</th>
-            <th className="px-6 py-6 text-left text-[10px] font-medium cursor-pointer text-gray-700">Yetkazib beruvchi</th>
-            <th className="px-6 py-6 text-left text-[10px] font-medium cursor-pointer text-gray-700">Status</th>
-            <th className="px-6 py-6 text-left text-[10px] font-medium cursor-pointer text-gray-700">Manzil</th>
+            <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Buyurtma ID si</th>
+            <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Mahsulot nomi</th>
+            <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Tadbirkorlar</th>
+            <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Soni</th>
+            <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Mijoz</th>
+            <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Umumiy tarixi</th>
+            <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Narxi</th>
+            <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Yetkazib beruvchi</th>
+            <th className="px-6 py-6 text-[10px] font-medium cursor-pointer text-center  text-gray-700">Status</th>
+            <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Manzil</th>
             <th className="px-6 py-6 text-left text-[10px] font-medium cursor-pointer text-gray-700">Amallar</th>
           </tr>
         </thead>
@@ -96,16 +103,16 @@ function Aperator() {
         <tbody className="divide-y divide-gray-200">
           {orders.map((order, index) => (
             <tr key={order.id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-              <td className="px-6 py-6 text-[10px]">{order.id}</td>
-              <td className="px-6 py-6 text-[10px]">{order.mahsulotNomi}</td>
-              <td className="px-6 py-6 text-[10px]">{order.tadbirkorlar}</td>
-              <td className="px-6 py-6 text-[10px]">{order.soni}</td>
-              <td className="px-6 py-6 text-[10px]">{order.mijoz}</td>
-              <td className="px-6 py-6 text-[10px]">{order.umumiyTarix}</td>
-              <td className="px-6 py-6 text-[10px]">{order.narxi}</td>
-              <td className="px-6 py-6 text-[10px]">{order.yetkazibBeruvchi}</td>
-              <td className="px-6 py-6 text-[10px]">{order.status}</td>
-              <td className="px-6 py-6 text-[10px]">{order.manzil}</td>
+              <td className="px-6 text-center py-6 text-[10px]">{order.id}</td>
+              <td className="px-6 text-center py-6 text-[10px]">{order.mahsulotNomi}</td>
+              <td className="px-6 text-center py-6 text-[10px]">{order.tadbirkorlar}</td>
+              <td className="px-6 text-center py-6 text-[10px]">{order.soni}</td>
+              <td className="px-6 text-center py-6 text-[10px]">{order.mijoz}</td>
+              <td className="px-6 text-center py-6 text-[10px]">{order.umumiyTarix}</td>
+              <td className="px-6 text-center py-6 text-[10px]">{order.narxi}</td>
+              <td className="px-6 text-center py-6 text-[10px]">{order.yetkazibBeruvchi}</td>
+              <td className="px-6 py-6 text-[10px] bg-red-600 text-white cursor-pointer text-center" onClick={YetkazibBerish}>{order.status}</td>
+              <td className="px-6 text-center py-6 text-[10px]">{order.manzil}</td>
               <td className="px-6 py-6">
                 <div className="flex gap-2">
                   <button className="text-blue-600 hover:text-blue-800">

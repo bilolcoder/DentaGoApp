@@ -50,7 +50,7 @@ function Dashboard() {
           </div>
           <div>
             <p className="text-gray-500">Zub texnik</p>
-            <p className="text-2xl font-bold">56</p>
+            <p className="text-2xl font-bold">3</p>
           </div>
         </Link>
 
