@@ -93,12 +93,16 @@ function Aperator() {
             <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Mijoz</th>
             <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Umumiy tarixi</th>
             <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Narxi</th>
-            <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Yetkazib beruvchi</th>
+            <th
+             className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700"
+             onClick={YetkazibBerish}
+             >Yetkazib beruvchi</th>
             <th className="px-6 py-6 text-[10px] font-medium cursor-pointer text-center  text-gray-700">Status</th>
             <th className="px-6 py-6 text-center text-[10px] font-medium cursor-pointer text-gray-700">Manzil</th>
             <th className="px-6 py-6 text-left text-[10px] font-medium cursor-pointer text-gray-700">Amallar</th>
           </tr>
         </thead>
+
 
         <tbody className="divide-y divide-gray-200">
           {orders.map((order, index) => (

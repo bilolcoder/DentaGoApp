@@ -374,14 +374,14 @@ function ZubTexnik() {
             <table className="w-full min-w-[900px]">
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
-                  <th className="px-6 py-6 text-left text-sm font-medium text-gray-700">Buyurtma ID si</th>
-                  <th className="px-6 py-6 text-left text-sm font-medium text-gray-700">Xaridor</th>
-                  <th className="px-6 py-6 text-left text-sm font-medium text-gray-700">Olgan Maxsuloti</th>
-                  <th className="px-6 py-6 text-left text-sm font-medium text-gray-700">Qachon olgan</th>
-                  <th className="px-6 py-6 text-left text-sm font-medium text-gray-700">Qachon qaytaradi</th>
-                  <th className="px-6 py-6 text-left text-sm font-medium text-gray-700">Qolgan vaqt</th>
-                  <th className="px-6 py-6 text-left text-sm font-medium text-gray-700">Telefon</th>
-                  <th className="px-6 py-6 text-left text-sm font-medium text-gray-700">Qabul qilgani</th>
+                  <th className="px-6 py-6 text-center text-sm font-medium text-gray-700">Buyurtma ID si</th>
+                  <th className="px-6 py-6 text-center text-sm font-medium text-gray-700">Xaridor</th>
+                  <th className="px-6 py-6 text-center text-sm font-medium text-gray-700">Olgan Maxsuloti</th>
+                  <th className="px-6 py-6 text-center text-sm font-medium text-gray-700">Qachon olgan</th>
+                  <th className="px-6 py-6 text-center text-sm font-medium text-gray-700">Qachon qaytaradi</th>
+                  <th className="px-6 py-6 text-center text-sm font-medium text-gray-700">Qolgan vaqt</th>
+                  <th className="px-6 py-6 text-center text-sm font-medium text-gray-700">Telefon</th>
+                  <th className="px-6 py-6 text-center text-sm font-medium text-gray-700">Qabul qilgani</th>
                 </tr>
               </thead>
 
@@ -389,14 +389,14 @@ function ZubTexnik() {
                 {filteredOrders.length > 0 ? (
                   filteredOrders.map((order, index) => (
                     <tr key={order.id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                      <td className="px-6 py-6 text-center text-sm">{order.id}</td>
-                      <td className="px-6 py-6 text-sm">{order.seller}</td>
-                      <td className="px-6 py-6 text-sm">{order.TushganPul}</td>
-                      <td className="px-6 py-6 text-sm">{order.BizgaUtgan}</td>
-                      <td className="px-6 py-6 text-sm">{order.Maxsulotlat}</td>
-                      <td className="px-6 py-6 text-sm">{order.utkazganM}</td>
-                      <td className="px-6 py-6 text-sm">{order.tel}</td>
-                      <td className="px-6 py-6 text-center">
+                      <td className="px-6 text-center py-6 text-sm">{order.id}</td>
+                      <td className="px-6 text-center py-6 text-sm">{order.seller}</td>
+                      <td className="px-6 text-center py-6 text-sm">{order.TushganPul}</td>
+                      <td className="px-6 text-center py-6 text-sm">{order.BizgaUtgan}</td>
+                      <td className="px-6 text-center py-6 text-sm">{order.Maxsulotlat}</td>
+                      <td className="px-6 text-center py-6 text-sm">{order.utkazganM}</td>
+                      <td className="px-6 text-center py-6 text-sm">{order.tel}</td>
+                      <td className="px-6 text-center py-6">
                         {renderStatusIcon(order.status)}
                       </td>
                     </tr>
